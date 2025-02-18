@@ -1406,6 +1406,7 @@ GameObject:
   - component: {fileID: 459556778}
   - component: {fileID: 459556780}
   - component: {fileID: 459556779}
+  - component: {fileID: 459556781}
   m_Layer: 0
   m_Name: MapLooper
   m_TagString: Untagged
@@ -1500,6 +1501,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &459556781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 459556777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dd6f7c30d84dd94ab41e5aaa8822e8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mapObjCount: 7
+  obstacleCount: 0
+  obstacleLastPos: {x: 0, y: 0, z: 0}
 --- !u!1 &463405743
 GameObject:
   m_ObjectHideFlags: 0
@@ -7715,6 +7731,7 @@ GameObject:
   - component: {fileID: 965592072}
   - component: {fileID: 965592071}
   - component: {fileID: 965592070}
+  - component: {fileID: 965592073}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -7797,6 +7814,19 @@ Transform:
   - {fileID: 459556778}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &965592073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965592069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c74474f7a4574024484be45ae05f81cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 330018016}
 --- !u!1 &1002029942
 GameObject:
   m_ObjectHideFlags: 0
