@@ -37,7 +37,7 @@ public class LoopController : MonoBehaviour
 
         // loop obstacle objects
         ObstacleController obstacle = collision.GetComponent<ObstacleController>();
-        if (obstacle != null)
+        if (obstacle)
             obstacleLastPos = obstacle.SetRandomPlace(obstacleLastPos, obstacleCount);
     }
 }

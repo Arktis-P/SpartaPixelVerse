@@ -7,8 +7,8 @@ public class ObstacleController : MonoBehaviour
     public float lowPosY = -2f;
     public float highPosY = 2f;
 
-    public float holeSizeMin = 3f;
-    public float holesizeMax = 8f;
+    public float holeSizeMin = 2f;
+    public float holesizeMax = 6f;
 
     public Transform topObject;
     public Transform botObject;
