@@ -2502,6 +2502,7 @@ GameObject:
   - component: {fileID: 1345529312}
   - component: {fileID: 1345529311}
   - component: {fileID: 1345529307}
+  - component: {fileID: 1345529313}
   m_Layer: 0
   m_Name: NPC_FlappyGuide
   m_TagString: Untagged
@@ -2625,7 +2626,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterRenderer: {fileID: 1780713261}
   weaponPivot: {fileID: 991063345}
-  interactButton: {fileID: 1820660434}
 --- !u!61 &1345529312
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2671,6 +2671,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &1345529313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345529306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d6613819e628574cbff8b1e94bf507a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactButton: {fileID: 1820660434}
 --- !u!1 &1386470406
 GameObject:
   m_ObjectHideFlags: 0
