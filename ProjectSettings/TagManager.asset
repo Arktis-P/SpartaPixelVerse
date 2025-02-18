@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - InteractionButton
+  - Map
   layers:
   - Default
   - TransparentFX
