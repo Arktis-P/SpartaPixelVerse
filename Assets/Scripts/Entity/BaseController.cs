@@ -46,7 +46,7 @@ public class BaseController : MonoBehaviour
         _rigidbody.velocity = direction;
         animationHandler.Move(direction);
     }
-    private void Rotate(Vector2 direction)  // rotat entity at the direction of its looking
+    protected void Rotate(Vector2 direction)  // rotat entity at the direction of its looking
     {
         float rotZ = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         bool isLeft = Mathf.Abs(rotZ) > 90f;
