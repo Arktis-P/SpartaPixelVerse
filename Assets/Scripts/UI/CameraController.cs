@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class CameraMover : MonoBehaviour
+public class CameraController : MonoBehaviour
 {
     public Transform target;
     float offsetX;
