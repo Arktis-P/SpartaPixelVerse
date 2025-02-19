@@ -5547,7 +5547,7 @@ MonoBehaviour:
   scoreText: {fileID: 1234639284}
   flappyGuideDesc: {fileID: 1125188617}
   leaderboardGuideDesc: {fileID: 895780584}
-  leaderboardUI: {fileID: 0}
+  leaderboardUI: {fileID: 262526600}
   leaderboardScoreText: {fileID: 1666031039}
   closetChestDesc: {fileID: 1188497922}
   closetUI: {fileID: 1643369598}
@@ -10554,7 +10554,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1386470411}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: ShowCloset
+        m_MethodName: ShowLeaderboard
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
