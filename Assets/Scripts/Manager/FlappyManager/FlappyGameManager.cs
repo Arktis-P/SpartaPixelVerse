@@ -60,6 +60,8 @@ public class FlappyGameManager : MonoBehaviour
         PlayerPrefs.SetInt(CurrentScoreKey, currentScore);
         PlayerPrefs.SetInt(HighestScoreKey, highestScore);
 
+        gameManager.SetPreviousScene(Scenes.FlappyGameScene);
+
         FlappyUIManager.RestartGame();
     }
 
@@ -76,7 +78,7 @@ public class FlappyGameManager : MonoBehaviour
 
     public void QuitGame()
     {
-        GameManager.Instance.SetPreviousScene(SceneManager.GetActiveScene().name);
+        // GameManager.Instance.SetPreviousScene(Scenes.FlappyGameScene);
         SceneManager.LoadScene(0);
     }
 }
