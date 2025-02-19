@@ -17,7 +17,8 @@ public class ClosetChestButtonHandler : MonoBehaviour
     {
         if (isInside && Input.GetKeyDown(KeyCode.Space))
         {
-            // open closet UI
+            UIManager.Instance.ShowCloset();
+            UIManager.Instance.ShowClosetChestDesc(false);
         }
     }
 
