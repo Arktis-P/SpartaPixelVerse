@@ -5,6 +5,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+enum NPCNames
+{
+    FlappyGuide, LeaderboardGuide
+}
+
 public class UIManager : MonoBehaviour
 {
     public GameObject miniResultUI;
@@ -12,6 +17,12 @@ public class UIManager : MonoBehaviour
 
     private const string CurrentScoreKey = "CurrentScore";
     private const string HighestScoreKey = "HighestScore";
+
+    public GameObject flappyGuideDesc;
+    public GameObject leaderboardGuideDesc;
+
+    private bool isFlappyGuideDesc = false;
+    private bool isLeaderboardGuideDesc = false;
 
     private GameManager gameManager;
     private static UIManager uiManager;
@@ -44,5 +55,17 @@ public class UIManager : MonoBehaviour
     public void DeleteResultUI()
     {
         miniResultUI.SetActive(false);
+    }
+
+    // show npc names and their decriptions
+    public void ShowFlappyGuideDesc(bool isInside)
+    {
+        isFlappyGuideDesc = isInside;
+        flappyGuideDesc.SetActive(isFlappyGuideDesc);
+    }
+    public void ShowLeaderboardGuideDesc(bool isInside)
+    {
+        isLeaderboardGuideDesc = isInside;
+        leaderboardGuideDesc.SetActive(isLeaderboardGuideDesc);
     }
 }

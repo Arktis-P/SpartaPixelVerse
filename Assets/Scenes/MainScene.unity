@@ -2424,6 +2424,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactButton: {fileID: 1014417253}
+  leaderboardGuideDesc: {fileID: 895780584}
 --- !u!1 &873314855
 GameObject:
   m_ObjectHideFlags: 0
@@ -2510,12 +2511,12 @@ GameObject:
   m_Component:
   - component: {fileID: 895780585}
   m_Layer: 5
-  m_Name: LeaderboardGuidName
+  m_Name: LeaderboardGuide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &895780585
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3435,7 +3436,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1125188618}
   m_Layer: 5
-  m_Name: FlappyGuidName
+  m_Name: FlappyGuide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4077,6 +4078,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactButton: {fileID: 1820660434}
+  flappyGuideDesc: {fileID: 1125188617}
 --- !u!1 &1347770327
 GameObject:
   m_ObjectHideFlags: 0
@@ -4271,6 +4273,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   miniResultUI: {fileID: 1118008294}
   scoreText: {fileID: 1234639284}
+  flappyGuideDesc: {fileID: 1125188617}
+  leaderboardGuideDesc: {fileID: 895780584}
 --- !u!1 &1458353197
 GameObject:
   m_ObjectHideFlags: 0

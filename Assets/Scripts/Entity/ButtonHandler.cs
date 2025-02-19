@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,9 +9,13 @@ public abstract class ButtonHandler : MonoBehaviour
     // for interact buttons
     public GameObject interactButton;
     protected bool isInside = false;  // check if player is in its collider area
+
+    protected UIManager uiManager;
     
-    void Start()
+    protected void Start()
     {
+        uiManager = UIManager.Instance;
+
         // initialize interact button
         if (interactButton == null) return;
         interactButton.SetActive(false);
@@ -22,14 +27,12 @@ public abstract class ButtonHandler : MonoBehaviour
     }
 
     // show button when player is in npc's collider area
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
-        isInside = true;
-        interactButton.SetActive(true);
+
     }
-    private void OnTriggerExit2D(Collider2D collision)
+    protected virtual void OnTriggerExit2D(Collider2D collision)
     {
-        isInside = false;
-        interactButton.SetActive(false);
+        
     }
 }
