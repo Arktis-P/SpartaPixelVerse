@@ -9,6 +9,7 @@ public class FlappyUIManager : MonoBehaviour
     private static FlappyUIManager flappyUIManager;
     public static FlappyUIManager Instance { get { return flappyUIManager; } }
 
+    public GameObject gameStartUI;
     public GameObject gameOverUI;
     public Text currentScoreText;
     public Text highestScoreText;
@@ -16,14 +17,15 @@ public class FlappyUIManager : MonoBehaviour
     void Start()
     {
         // process exception
+        if (gameStartUI == null) Debug.LogError("Game Start UI NOT found!");
+        if (gameOverUI == null) Debug.LogError("Game Over UI NOT found!");
         if (currentScoreText == null) Debug.LogError("Current Score Text NOT found!");
         if (highestScoreText == null) Debug.LogError("Highest Score Text NOT found!");
     }
 
-    // Update is called once per frame
-    void Update()
+    public void StartGame()
     {
-        
+        gameStartUI.SetActive(true);
     }
 
     public void RestartGame()

@@ -18,6 +18,9 @@ public class FlappyGameManager : MonoBehaviour
     // to save highest score
     private const string HighestScoreKey = "HighestScore";
 
+    private bool isStart;
+    public bool IsStart { get => isStart; }
+
     private void Awake()
     {
         flappyGameManager = this;
@@ -49,17 +52,18 @@ public class FlappyGameManager : MonoBehaviour
 
     public void GameOver()
     {
-        StartCoroutine(DelayedSetActive());
-    }
-    IEnumerator DelayedSetActive()
-    {
-        yield return new WaitForSeconds(1f);  // wait for 1 sec
         FlappyUIManager.RestartGame();
+    }
+
+    public void StartGame()
+    {
+        isStart = true;
+        flappyUIManager.gameStartUI.SetActive(false);
     }
 
     public void RestartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(1);
     }
 
     public void QuitGame()
