@@ -15,6 +15,13 @@ public class ObstacleController : MonoBehaviour
 
     public float padWidth = 8f;
 
+    FlappyGameManager flappyGameManager;
+
+    private void Start()
+    {
+        flappyGameManager = FlappyGameManager.Instance;
+    }
+
     public Vector3 SetRandomPlace(Vector3 lastPos, int obstacleCount)
     {
         float holeSize = Random.Range(holeSizeMin, holesizeMax);
@@ -30,5 +37,12 @@ public class ObstacleController : MonoBehaviour
         transform.position = placePos;
 
         return placePos;
+    }
+
+    // if player object 'exits' the collider, add score
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        FlappyPlayerController player = collision.GetComponent<FlappyPlayerController>();
+        if (player != null) { flappyGameManager.AddScore(1); }
     }
 }

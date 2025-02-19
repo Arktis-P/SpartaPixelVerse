@@ -12125,7 +12125,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e518af76dd3b1ef4e924efb76326681a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOverUI: {fileID: 0}
+  gameOverUI: {fileID: 386218635}
+  currentScoreText: {fileID: 472446289}
+  highestScoreText: {fileID: 1475716887}
 --- !u!1 &1559918887
 GameObject:
   m_ObjectHideFlags: 0
@@ -14229,7 +14231,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 220429b1a705bc343b9aebd9aa5ebbbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOverUI: {fileID: 386218635}
 --- !u!4 &2097448507
 Transform:
   m_ObjectHideFlags: 0
