@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.UI;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -33,5 +34,9 @@ public class FlappyUIManager : MonoBehaviour
     public void UpdateScore(int score)
     {
         currentScoreText.text = score.ToString();
+    }
+    public void UpdateHighestScore(int score)
+    {
+        highestScoreText.text = score.ToString();
     }
 }

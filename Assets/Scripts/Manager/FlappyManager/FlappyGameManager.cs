@@ -15,6 +15,8 @@ public class FlappyGameManager : MonoBehaviour
     public int CurrentScore { get => currentScore; }
     private int highestScore;
     public int HighestScore { get => highestScore; }
+    // to save highest score
+    private const string HighestScoreKey = "HighestScore";
 
     private void Awake()
     {
@@ -25,12 +27,24 @@ public class FlappyGameManager : MonoBehaviour
     private void Start()
     {
         flappyUIManager.UpdateScore(0);  // start the game with score 0
+        // get highest score from player prefs
+        highestScore = PlayerPrefs.GetInt(HighestScoreKey, 0);
+        flappyUIManager.UpdateHighestScore(highestScore);
     }
     
     public void AddScore(int score)
     {
         currentScore += score;
         FlappyUIManager.UpdateScore(currentScore);
+
+        // compare highest score with current score, and update if necessary
+        if (currentScore > highestScore)
+        {
+            highestScore = currentScore;
+            FlappyUIManager.UpdateHighestScore(highestScore);
+            // save new highest
+            PlayerPrefs.SetInt(HighestScoreKey, highestScore);
+        }
     }
 
     public void GameOver()
