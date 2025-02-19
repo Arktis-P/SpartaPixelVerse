@@ -19,11 +19,15 @@ public class UIManager : MonoBehaviour
     private const string FlappyHighestScoreKey = "FlappyHighestScore";
 
     public GameObject flappyGuideDesc;
-    public GameObject leaderboardGuideDesc;
-    public GameObject leaderboard;
-    public Text leaderboardScoreText;
 
+    public GameObject leaderboardGuideDesc;
+    public GameObject leaderboardUI;
+    public Text leaderboardScoreText;
     private bool isLeaderboard = false;
+
+    public GameObject closetChestDesc;
+    public GameObject closetUI;
+    private bool isCloset = false;
 
     private GameManager gameManager;
     private static UIManager uiManager;
@@ -67,6 +71,10 @@ public class UIManager : MonoBehaviour
     {
         leaderboardGuideDesc.SetActive(isInside);
     }
+    public void ShowClosetChestDesc(bool isInside)
+    {
+        closetChestDesc.SetActive(isInside);
+    }
 
     // methods about leaderboard
     private void UpdateLeaderboard()
@@ -80,6 +88,13 @@ public class UIManager : MonoBehaviour
     {
         isLeaderboard = !isLeaderboard;
         UpdateLeaderboard();
-        leaderboard.SetActive(isLeaderboard);
+        leaderboardUI.SetActive(isLeaderboard);
+    }
+    
+    // methods for closet
+    public void ShowCloset()
+    {
+        isCloset = !isCloset;
+        closetUI.SetActive(isCloset);
     }
 }

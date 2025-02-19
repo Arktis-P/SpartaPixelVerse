@@ -7,7 +7,7 @@ public class BaseController : MonoBehaviour
     protected Rigidbody2D _rigidbody;
 
     [SerializeField] private SpriteRenderer characterRenderer;
-    [SerializeField] private Transform weaponPivot;
+    // [SerializeField] private Transform weaponPivot;
     // movement directions => arrow keys or wasd
     protected Vector2 moveDirection = Vector2.zero;
     public Vector2 MoveDirection { get { return moveDirection; } }
@@ -39,7 +39,7 @@ public class BaseController : MonoBehaviour
         Move(moveDirection);
     }
 
-    private void Move(Vector2 direction)  // move at certain speed in the direction
+    protected void Move(Vector2 direction)  // move at certain speed in the direction
     {
         direction = direction * 5f;
 
