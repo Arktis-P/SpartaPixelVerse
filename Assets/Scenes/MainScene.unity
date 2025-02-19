@@ -1996,7 +1996,7 @@ GameObject:
   - component: {fileID: 786385532}
   - component: {fileID: 786385531}
   - component: {fileID: 786385530}
-  - component: {fileID: 786385529}
+  - component: {fileID: 786385536}
   m_Layer: 0
   m_Name: NPC_LeaderboadGuide
   m_TagString: Untagged
@@ -2004,20 +2004,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &786385529
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 786385528}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d6613819e628574cbff8b1e94bf507a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactButton: {fileID: 1014417253}
-  isInside: 0
 --- !u!114 &786385530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2179,6 +2165,19 @@ Transform:
   - {fileID: 1014417254}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &786385536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 786385528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fcd7fbf8d01c4343b59ccd3c0077822, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactButton: {fileID: 1014417253}
 --- !u!1 &991063344
 GameObject:
   m_ObjectHideFlags: 0
