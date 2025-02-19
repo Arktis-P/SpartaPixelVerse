@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    string previousScene;
+    public string PreviousScene { get => previousScene; }
+
+    static GameManager gameManager;
+    public static GameManager Instance { get { return gameManager; } }
+
+    private void Awake()
     {
-        
+        gameManager = this;
+        DontDestroyOnLoad(this.gameObject);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetPreviousScene(string scene)
     {
-        
+        previousScene = scene;
     }
 }

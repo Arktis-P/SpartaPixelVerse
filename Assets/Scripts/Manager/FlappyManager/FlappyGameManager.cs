@@ -11,6 +11,8 @@ public class FlappyGameManager : MonoBehaviour
     private FlappyUIManager flappyUIManager;
     public FlappyUIManager FlappyUIManager { get { return flappyUIManager; } }
 
+    private GameManager gameManager;
+
     private int currentScore;
     public int CurrentScore { get => currentScore; }
     private int highestScore;
@@ -26,6 +28,7 @@ public class FlappyGameManager : MonoBehaviour
     {
         flappyGameManager = this;
         flappyUIManager = FindObjectOfType<FlappyUIManager>();
+        gameManager = GameManager.Instance;
     }
 
     private void Start()
@@ -73,6 +76,7 @@ public class FlappyGameManager : MonoBehaviour
 
     public void QuitGame()
     {
+        GameManager.Instance.SetPreviousScene(SceneManager.GetActiveScene().name);
         SceneManager.LoadScene(0);
     }
 }
