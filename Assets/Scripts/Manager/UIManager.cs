@@ -13,7 +13,7 @@ public class UIManager : MonoBehaviour
     private const string CurrentScoreKey = "CurrentScore";
     private const string HighestScoreKey = "HighestScore";
 
-    private static GameManager gameManager;
+    private GameManager gameManager;
     private static UIManager uiManager;
     public static UIManager Instance { get { return uiManager; } }
 
@@ -21,7 +21,7 @@ public class UIManager : MonoBehaviour
     {
         gameManager = GameManager.Instance;
         uiManager = this;
-        GameManager.uiManager = this;
+        gameManager.uiManager = this;
     }
 
     // show resultUI if previous scene is minigame
