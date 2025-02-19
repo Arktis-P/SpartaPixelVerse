@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ButtonHandler : MonoBehaviour
+public abstract class ButtonHandler : MonoBehaviour
 {
     // for interact buttons
     public GameObject interactButton;
-    private bool isInside = false;  // check if player is in its collider area
+    protected bool isInside = false;  // check if player is in its collider area
     
     void Start()
     {
@@ -16,9 +16,9 @@ public class ButtonHandler : MonoBehaviour
         interactButton.SetActive(false);
     }
 
-    void Update()
+    protected virtual void Update()
     {
-        if (isInside && Input.GetKeyDown(KeyCode.Space)) SceneManager.LoadScene(1);
+        
     }
 
     // show button when player is in npc's collider area
