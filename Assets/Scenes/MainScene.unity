@@ -204,7 +204,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 84376448}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 611616739}
+        m_TargetAssemblyTypeName: PlayerColorHandler, Assembly-CSharp
+        m_MethodName: ChangeRed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &84376448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2663,6 +2675,7 @@ GameObject:
   - component: {fileID: 611616736}
   - component: {fileID: 611616737}
   - component: {fileID: 611616738}
+  - component: {fileID: 611616739}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2814,6 +2827,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8467663c75abbb4e84d797579e01683, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &611616739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 611616731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a46c193564a22ae46b3c731773f536cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 611616731}
 --- !u!1 &710484100
 GameObject:
   m_ObjectHideFlags: 0
@@ -4468,7 +4494,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1106797092}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 611616739}
+        m_TargetAssemblyTypeName: PlayerColorHandler, Assembly-CSharp
+        m_MethodName: ChangeGreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1106797092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8581,8 +8619,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1386470411}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: ShowClosetChestDesc
-        m_Mode: 6
+        m_MethodName: ShowCloset
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -8789,7 +8827,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1749430484}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 611616739}
+        m_TargetAssemblyTypeName: PlayerColorHandler, Assembly-CSharp
+        m_MethodName: ChangeWhite
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1749430484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9015,7 +9065,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1789771474}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 611616739}
+        m_TargetAssemblyTypeName: PlayerColorHandler, Assembly-CSharp
+        m_MethodName: ChangeBlack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1789771474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10204,7 +10266,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1948386861}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 611616739}
+        m_TargetAssemblyTypeName: PlayerColorHandler, Assembly-CSharp
+        m_MethodName: ChangeBlue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1948386861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10480,7 +10554,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1386470411}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: ShowLeaderboard
+        m_MethodName: ShowCloset
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
