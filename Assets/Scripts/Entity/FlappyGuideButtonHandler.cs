@@ -8,8 +8,6 @@ public class FlappyGuideButtonHandler : MonoBehaviour
     public GameObject interactButton;
     private bool isInside = false;  // check if player is in its collider area
 
-    public GameObject flappyGuideDesc;
-
     private void Start()
     {
         // initialize interact button
@@ -28,13 +26,13 @@ public class FlappyGuideButtonHandler : MonoBehaviour
         isInside = true;
         interactButton.SetActive(isInside);
         // call desc
-        flappyGuideDesc.SetActive(isInside);
+        UIManager.Instance.ShowFlappyGuideDesc(isInside);
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         isInside = false;
         interactButton.SetActive(isInside);
         // de-call desc
-        flappyGuideDesc.SetActive(isInside);
+        UIManager.Instance.ShowFlappyGuideDesc(isInside);
     }
 }

@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LeaderboardGuideButtonHandler : MonoBehaviour
 {
     public GameObject interactButton;
     private bool isInside = false;  // check if player is in its collider area
 
-    public GameObject leaderboardGuideDesc;
+    private const string FlappyHighestScoreKey = "FlappyHighestScore";
 
     private void Start()
     {
@@ -19,7 +20,11 @@ public class LeaderboardGuideButtonHandler : MonoBehaviour
 
     private void Update()
     {
-        if (isInside && Input.GetKeyDown(KeyCode.Space)) SceneManager.LoadScene(1);
+        if (isInside && Input.GetKeyDown(KeyCode.Space))
+        {
+            UIManager.Instance.ShowLeaderboard();
+            UIManager.Instance.ShowLeaderboardGuideDesc(false);
+        }
     }
 
     // show button when player is in npc's collider area
@@ -28,13 +33,13 @@ public class LeaderboardGuideButtonHandler : MonoBehaviour
         isInside = true;
         interactButton.SetActive(isInside);
         // call desc
-        leaderboardGuideDesc.SetActive(isInside);
+        UIManager.Instance.ShowLeaderboardGuideDesc(isInside);
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         isInside = false;
         interactButton.SetActive(isInside);
         // de-call desc
-        leaderboardGuideDesc.SetActive(isInside);
+        UIManager.Instance.ShowLeaderboardGuideDesc(isInside);
     }
 }

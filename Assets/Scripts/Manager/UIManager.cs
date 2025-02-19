@@ -15,14 +15,15 @@ public class UIManager : MonoBehaviour
     public GameObject miniResultUI;
     public Text scoreText;
 
-    private const string CurrentScoreKey = "CurrentScore";
-    private const string HighestScoreKey = "HighestScore";
+    private const string FlappyCurrentScoreKey = "FlappyCurrentScore";
+    private const string FlappyHighestScoreKey = "FlappyHighestScore";
 
     public GameObject flappyGuideDesc;
     public GameObject leaderboardGuideDesc;
+    public GameObject leaderboard;
+    public Text leaderboardScoreText;
 
-    private bool isFlappyGuideDesc = false;
-    private bool isLeaderboardGuideDesc = false;
+    private bool isLeaderboard = false;
 
     private GameManager gameManager;
     private static UIManager uiManager;
@@ -50,7 +51,7 @@ public class UIManager : MonoBehaviour
     }
     private void UpdateResultUI()
     {
-        scoreText.text = $"현재 기록: {PlayerPrefs.GetInt(CurrentScoreKey, 0)}\n최고 기록: {PlayerPrefs.GetInt(HighestScoreKey, 0)}";
+        scoreText.text = $"현재 기록: {PlayerPrefs.GetInt(FlappyCurrentScoreKey, 0)}\n최고 기록: {PlayerPrefs.GetInt(FlappyHighestScoreKey, 0)}";
     }
     public void DeleteResultUI()
     {
@@ -60,12 +61,25 @@ public class UIManager : MonoBehaviour
     // show npc names and their decriptions
     public void ShowFlappyGuideDesc(bool isInside)
     {
-        isFlappyGuideDesc = isInside;
-        flappyGuideDesc.SetActive(isFlappyGuideDesc);
+        flappyGuideDesc.SetActive(isInside);
     }
     public void ShowLeaderboardGuideDesc(bool isInside)
     {
-        isLeaderboardGuideDesc = isInside;
-        leaderboardGuideDesc.SetActive(isLeaderboardGuideDesc);
+        leaderboardGuideDesc.SetActive(isInside);
+    }
+
+    // methods about leaderboard
+    private void UpdateLeaderboard()
+    {
+        string str = "";
+        str += PlayerPrefs.GetInt(FlappyHighestScoreKey, 0);
+
+        leaderboardScoreText.text = str;
+    }
+    public void ShowLeaderboard()
+    {
+        isLeaderboard = !isLeaderboard;
+        UpdateLeaderboard();
+        leaderboard.SetActive(isLeaderboard);
     }
 }
