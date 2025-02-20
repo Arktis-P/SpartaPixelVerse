@@ -15,7 +15,8 @@ public class CameraController : MonoBehaviour
     {
         if (target == null) return;  // process exception
         // if on Flappy game screen, get offsetX (distance from camera to player)
-        if (SceneManager.GetActiveScene().buildIndex == (int)Scenes.MainScene) offsetX = transform.position.x - target.position.x;
+        if (SceneManager.GetActiveScene().buildIndex == (int)Scenes.FlappyGameScene) 
+            offsetX = transform.position.x - target.position.x;
         else offsetX = 0f;
     }
 
@@ -39,7 +40,6 @@ public class CameraController : MonoBehaviour
         else if (SceneManager.GetActiveScene().buildIndex == (int)Scenes.FlappyGameScene)
         {
             pos.x = target.position.x + offsetX;
-            pos.y = target.position.y;
         }
 
         transform.position = pos;
