@@ -34,7 +34,7 @@ SpartaPixelVerse는 간단한 메타버스 환경을 구축하고, 맵 위의 �
   
 #### 2️⃣ 미니게임 이식
 - 기존에 제작했었던 Flappy plane을 프로젝트의 전체 컨셉에 맞게 변경하여 이식했다.
-- 미니 게임 내의 UI를 통해 현재 점수와 최고 점수를 확인할 수 있도록 제작했다.
+- 미니 게임 내의 UI를 통해 현재 점수와 최고 점수를 확인할 수 있도록 제작했다.  
 ![스크린샷](ReadMeFiles/GameFeature2.png)
   
 #### 3️⃣ 씬 전환
@@ -49,7 +49,7 @@ SpartaPixelVerse는 간단한 메타버스 환경을 구축하고, 맵 위의 �
 #### 5️⃣ 캐릭터 커스텀
 - 캐릭터의 색과 외형을 변경할 수 있는 오브젝트와 UI를 구성했다.
 - 캐릭터의 `SpriteRendere`에 색을 입혀, 캐릭터의 색을 변경할 수 있다.
-- 캐릭터의 애니메이션에 `IsDwarf` 변수를 추가해, 변수 값에 따라 다른 캐릭터 외형의 애니메이션이 실행되도록 했다.
+- 캐릭터의 애니메이션에 `IsDwarf` 변수를 추가해, 변수 값에 따라 다른 캐릭터 외형의 애니메이션이 실행되도록 했다.  
 ![스크린샷](ReadMeFiles/GameFeature5.png)
   
 #### 6️⃣ 리더보드 시스템
@@ -74,7 +74,7 @@ SpartaPixelVerse는 간단한 메타버스 환경을 구축하고, 맵 위의 �
 #### 2️⃣ 씬 전환에 따른 오브젝트 재생성/재할당
 - **문제**: `MainScene`에서 활용하기 위해 `GameManager` 및 `UIManager` 클래스를 싱글톤 처리를 했고, `GameManager`의 경우에는 씬을 전환해도 파괴되지 않도록 했다. 그러나 씬을 전환해 다시 `MainScene`에 진입했을 때, `UIManager`에 대한 `NullReference` 오류가 발생했다.
 - **원인**: 씬을 전환하면 `DontDestroyOnLoad` 처리 되지 않은 오브젝트는 모두 삭제된다. 때문에, 다시 `MainScene`에 진입했을 때 `UIManager` 오브젝트가 다시 생성되었고, 이것이 `GameManager`에 재할당되지 않아 `NullReference` 오류가 발생했다.
-- **해결**: `GameManager` 내에서 사용될 `UIManager`를 `public` 인스턴스로 선언한 뒤, 씬이 전환된 이후에도 다시 이를 할당 받을 수 있도록 `UIManager`의 `Start()` 로직을 변경했다.
+- **해결**: `GameManager` 내에서 사용될 `UIManager`를 `public` 인스턴스로 선언한 뒤, 씬이 전환된 이후에도 다시 이를 할당 받을 수 있도록 `UIManager`의 `Start()` 로직을 변경했다.  
 ![코드](ReadMeFiles/TroubleShooting2_Code.png)
 
 #### 3️⃣ NPC 대화 선택지 구성
