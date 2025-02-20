@@ -29,6 +29,8 @@ public class UIManager : MonoBehaviour
     public GameObject closetUI;
     private bool isCloset = false;
 
+    public GameObject petChestDesc;
+
     private GameManager gameManager;
     private static UIManager uiManager;
     public static UIManager Instance { get { return uiManager; } }
@@ -74,6 +76,10 @@ public class UIManager : MonoBehaviour
     public void ShowClosetChestDesc(bool isInside)
     {
         closetChestDesc.SetActive(isInside);
+    }
+    public void ShowPetChestDesc(bool isInside)
+    {
+        petChestDesc.SetActive(isInside);
     }
 
     // methods about leaderboard
