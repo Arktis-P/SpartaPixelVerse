@@ -7,14 +7,23 @@ using UnityEngine.InputSystem;
 public class PlayerController : BaseController
 {
     private Camera camera;
+
     private bool isPet;
     public GameObject pet;
+    private SpriteRenderer petRenderer;
 
     protected override void Start()
     {
         camera = Camera.main;
 
         isPet = GameManager.Instance.IsPet;
+        petRenderer = pet.GetComponentInChildren<SpriteRenderer>();
+    }
+
+    private void Update()
+    {
+        Rotate(lookDirection);
+        PetRotate(lookDirection);
     }
 
     // equip pet method
@@ -43,5 +52,13 @@ public class PlayerController : BaseController
 
         if (lookDirection.magnitude < .9f) lookDirection = Vector2.zero;
         else lookDirection = lookDirection.normalized;
+    }
+
+    void PetRotate(Vector2 direction)
+    {
+        float rotZ = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        bool isLeft = Mathf.Abs(rotZ) > 90f;
+
+        petRenderer.flipX = isLeft;
     }
 }
