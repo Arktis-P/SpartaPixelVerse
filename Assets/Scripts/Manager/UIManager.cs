@@ -76,7 +76,7 @@ public class UIManager : MonoBehaviour
         if (!isInside)
         {
             FlappyGuideScript flappyGuideScriptScript = flappyGuideScript.GetComponent<FlappyGuideScript>();
-            flappyGuideScriptScript.initializeTextNum();
+            flappyGuideScriptScript.InitializeTextNum();
         }
     }
     public void ShowLeaderboardGuideDesc(bool isInside)
