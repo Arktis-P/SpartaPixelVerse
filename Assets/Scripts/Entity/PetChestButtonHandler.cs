@@ -23,6 +23,7 @@ public class PetChestButtonHandler : MonoBehaviour
         if (isInside && Input.GetKeyDown(KeyCode.Space))
         {
             // euqip pet
+            GameManager.Instance.SetPet();
             playerController.EquipPet();
             UIManager.Instance.ShowPetChestDesc(false);
         }

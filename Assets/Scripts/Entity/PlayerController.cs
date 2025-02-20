@@ -18,6 +18,8 @@ public class PlayerController : BaseController
 
         isPet = GameManager.Instance.IsPet;
         petRenderer = pet.GetComponentInChildren<SpriteRenderer>();
+
+        EquipPet();  // check if player has pet
     }
 
     private void Update()
@@ -29,12 +31,16 @@ public class PlayerController : BaseController
     // equip pet method
     public void EquipPet()
     {
-        GameManager.Instance.SetPet();
         isPet = GameManager.Instance.IsPet;
         if (isPet)
         {
             pet.SetActive(isPet);
             moveSpeed = moveSpeed * 1.5f;
+        }
+        else
+        {
+            pet.SetActive(isPet);
+            moveSpeed = 5f;
         }
     }
 
