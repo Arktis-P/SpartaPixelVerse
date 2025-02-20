@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class FlappyGuideButtonHandler : MonoBehaviour
 {
     public GameObject interactButton;
-    private bool isInside = false;  // check if player is in its collider area
+    public static bool isInside = false;  // check if player is in its collider area
 
     private void Start()
     {
@@ -17,7 +17,11 @@ public class FlappyGuideButtonHandler : MonoBehaviour
 
     private void Update()
     {
-        if (isInside && Input.GetKeyDown(KeyCode.Space)) SceneManager.LoadScene(1);
+        if (isInside && Input.GetKeyDown(KeyCode.Space))
+        {
+            UIManager.Instance.ShowFlappyGuideDesc(false);  // turn off the guide text
+            UIManager.Instance.ShowFlappyGuideScripts(isInside);
+        }
     }
 
     // show button when player is in npc's collider area
@@ -34,5 +38,6 @@ public class FlappyGuideButtonHandler : MonoBehaviour
         interactButton.SetActive(isInside);
         // de-call desc
         UIManager.Instance.ShowFlappyGuideDesc(isInside);
+        UIManager.Instance.ShowFlappyGuideScripts(isInside);
     }
 }

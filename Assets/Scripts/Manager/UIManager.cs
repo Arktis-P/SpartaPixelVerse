@@ -19,6 +19,7 @@ public class UIManager : MonoBehaviour
     private const string FlappyHighestScoreKey = "FlappyHighestScore";
 
     public GameObject flappyGuideDesc;
+    public GameObject flappyGuideScript;
 
     public GameObject leaderboardGuideDesc;
     public GameObject leaderboardUI;
@@ -68,6 +69,15 @@ public class UIManager : MonoBehaviour
     public void ShowFlappyGuideDesc(bool isInside)
     {
         flappyGuideDesc.SetActive(isInside);
+    }
+    public void ShowFlappyGuideScripts(bool isInside)
+    {
+        flappyGuideScript.SetActive(isInside);
+        if (!isInside)
+        {
+            FlappyGuideScript flappyGuideScriptScript = flappyGuideScript.GetComponent<FlappyGuideScript>();
+            flappyGuideScriptScript.initializeTextNum();
+        }
     }
     public void ShowLeaderboardGuideDesc(bool isInside)
     {
