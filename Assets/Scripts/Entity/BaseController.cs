@@ -8,6 +8,8 @@ public class BaseController : MonoBehaviour
 
     [SerializeField] private SpriteRenderer characterRenderer;
     // [SerializeField] private Transform weaponPivot;
+
+    protected float moveSpeed = 5f;
     // movement directions => arrow keys or wasd
     protected Vector2 moveDirection = Vector2.zero;
     public Vector2 MoveDirection { get { return moveDirection; } }
@@ -41,7 +43,7 @@ public class BaseController : MonoBehaviour
 
     protected void Move(Vector2 direction)  // move at certain speed in the direction
     {
-        direction = direction * 5f;
+        direction = direction * moveSpeed;
 
         _rigidbody.velocity = direction;
         animationHandler.Move(direction);

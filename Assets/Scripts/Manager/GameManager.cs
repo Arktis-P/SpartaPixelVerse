@@ -18,6 +18,9 @@ public class GameManager : MonoBehaviour
 
     public UIManager uiManager;
 
+    private bool isPet;
+    public bool IsPet { get => isPet; }
+
     private void Awake()
     {
         if (Instance == null)
@@ -45,5 +48,10 @@ public class GameManager : MonoBehaviour
     public void SetPreviousScene(Scenes scene)
     {
         previousScene = scene;
+    }
+
+    public void SetPet()
+    {
+        isPet = !isPet;
     }
 }

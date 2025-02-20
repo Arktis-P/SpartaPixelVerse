@@ -7,10 +7,15 @@ public class PetChestButtonHandler : MonoBehaviour
     public GameObject interactButton;
     private bool isInside = false;
 
+    public GameObject player;
+    private PlayerController playerController;
+
     void Start()
     {
         if (interactButton == null) return;
         interactButton.SetActive(isInside);
+
+        playerController = player.GetComponent<PlayerController>();
     }
 
     void Update()
@@ -18,6 +23,7 @@ public class PetChestButtonHandler : MonoBehaviour
         if (isInside && Input.GetKeyDown(KeyCode.Space))
         {
             // euqip pet
+            playerController.EquipPet();
             UIManager.Instance.ShowPetChestDesc(false);
         }
     }

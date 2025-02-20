@@ -1,15 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerController : BaseController
 {
     private Camera camera;
+    private bool isPet;
+    public GameObject pet;
 
     protected override void Start()
     {
         camera = Camera.main;
+
+        isPet = GameManager.Instance.IsPet;
+    }
+
+    // equip pet method
+    public void EquipPet()
+    {
+        GameManager.Instance.SetPet();
+        isPet = GameManager.Instance.IsPet;
+        if (isPet)
+        {
+            pet.SetActive(isPet);
+            moveSpeed = moveSpeed * 1.5f;
+        }
     }
 
     // events with on input
