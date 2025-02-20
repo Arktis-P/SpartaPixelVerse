@@ -6,6 +6,9 @@ public class AnimationHandler : MonoBehaviour
 {
     // get animation variable and convert into hash
     private static readonly int IsMoving = Animator.StringToHash("IsMoving");
+    private static readonly int IsDwarf = Animator.StringToHash("IsDwarf");
+
+    private bool isDwarf = false;
 
     protected Animator animator;
 
@@ -18,4 +21,13 @@ public class AnimationHandler : MonoBehaviour
     {
         animator.SetBool(IsMoving, obj.magnitude > .5f);  // convert IsMoving to true only if entity moved more than .5f vector2
     }
+    public void ChangeDwarf()
+    {
+        isDwarf = !isDwarf;
+        animator.SetBool(IsDwarf, isDwarf);
+    }
 }
+
+
+
+    
